@@ -1,7 +1,7 @@
 # Hi there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35" height="35"/> I'm **Tanzila Khan**
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=26&pause=1000&center=true&width=435&lines=AI%2FML+Researcher;Multi-Agent+RL+Explorer;Full-Stack+Flutter+%26+Next.js+Developer;Open-Source+Contributor" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=26&pause=1000&center=true&width=435&lines=AI%2FML+Researcher;Full-Stack+Flutter+%26+Next.js+Developer;Open-Source+Contributor" alt="Typing SVG" />
 </p>
 
 --
