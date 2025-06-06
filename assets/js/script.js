@@ -120,24 +120,34 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 
 // contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('[data-form]');
+  
+  if (form) {
+    // Check if all required fields are filled
+    const formInputs = document.querySelectorAll('[data-form-input]');
+    formInputs.forEach(input => {
+      input.addEventListener('input', checkFormValidity);
+    });
+    
+    function checkFormValidity() {
+      let isValid = true;
+      formInputs.forEach(input => {
+        if (input.required && !input.value.trim()) {
+          isValid = false;
+        }
+      });
+      
+      const submitBtn = document.querySelector('[data-form-btn]');
+      if (submitBtn) {
+        submitBtn.disabled = !isValid;
+      }
     }
-
-  });
-}
-
+    
+    // Initial check
+    checkFormValidity();
+  }
+});
 
 
 // page navigation variables

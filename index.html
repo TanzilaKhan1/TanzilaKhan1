@@ -795,28 +795,27 @@
           </figure>
         </section>
 
-        <section class="contact-form">
+<section class="contact-form">
 
-          <h3 class="h3 form-title">Contact Form</h3>
+  <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+  <form action="https://formspree.io/f/tanzila011001@gmail.com" method="POST" class="form" data-form>
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+    <div class="input-wrapper">
+      <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+      <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+    </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+    <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+    <button class="form-btn" type="submit" data-form-btn>
+      <ion-icon name="paper-plane"></ion-icon>
+      <span>Send Message</span>
+    </button>
 
-          </form>
-
-        </section>
+  </form>
+</section>
 
       </article>
 
@@ -834,7 +833,37 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('[data-form]');
+  
+  if (form) {
+    // Check if all required fields are filled
+    const formInputs = document.querySelectorAll('[data-form-input]');
+    formInputs.forEach(input => {
+      input.addEventListener('input', checkFormValidity);
+    });
+    
+    function checkFormValidity() {
+      let isValid = true;
+      formInputs.forEach(input => {
+        if (input.required && !input.value.trim()) {
+          isValid = false;
+        }
+      });
+      
+      const submitBtn = document.querySelector('[data-form-btn]');
+      if (submitBtn) {
+        submitBtn.disabled = !isValid;
+      }
+    }
+    
+    // Initial check
+    checkFormValidity();
+  }
+});
 
+   </script>
   <!-- Modal -->
   <div class="modal-container" data-modal-container>
     <div class="overlay" data-overlay></div>
