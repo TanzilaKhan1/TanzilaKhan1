@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanzila Khan | CS Researcher & Fullstack AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">&lt;TK/&gt;</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text mono">Initializing...</p>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Noise texture overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Decorative grid background -->
+  <div class="grid-bg"></div>
+
+  <!-- Floating decorative elements -->
+  <div class="deco-shapes" aria-hidden="true">
+    <span class="shape shape-1"></span>
+    <span class="shape shape-2"></span>
+    <span class="shape shape-3"></span>
+    <span class="shape shape-4"></span>
+    <span class="shape shape-5"></span>
+    <span class="shape shape-6"></span>
+    <span class="shape shape-7"></span>
+    <span class="shape shape-8"></span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">&lt;TK/&gt;</span>
+        <span class="logo-text">Tanzila</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" data-hover>About</a>
+        <a href="#experience" data-hover>Experience</a>
+        <a href="#research" data-hover>Research</a>
+        <a href="#projects" data-hover>Projects</a>
+        <a href="#skills" data-hover>Skills</a>
+        <a href="#achievements" data-hover>Achievements</a>
+        <a href="#education" data-hover>Education</a>
+      </div>
+      <a href="Tanzila_Khan_Resume.pdf" class="nav-cta" data-magnetic download>Download Resume <span>&darr;</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#education">Education</a>
+      <a href="Tanzila_Khan_Resume.pdf" download>Resume</a>
+      <a href="#contact" class="mobile-cta">Let's Talk &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow hero-glow--secondary"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-tag-wrap">
+          <span class="hero-tag-line"></span>
+          <p class="hero-tag mono" id="typewriter"></p>
+        </div>
+        <h1 class="hero-title">
+          <span class="reveal-wrap"><span class="reveal-text" data-reveal>Tanzila</span></span><br>
+          <span class="reveal-wrap"><span class="reveal-text hero-title-accent" data-reveal data-delay="200">Khan</span></span>
+        </h1>
+        <p class="hero-desc" data-fade-up>
+          Fullstack AI engineer and CS researcher turning deep-learning experiments
+          into production software with measurable impact.
+        </p>
+        <div class="hero-actions" data-fade-up data-delay="300">
+          <a href="#projects" class="btn btn-primary" data-magnetic>
+            <span class="btn-text">View My Work</span>
+            <span class="btn-arrow">&rarr;</span>
+            <span class="btn-glow"></span>
+          </a>
+          <a href="Tanzila_Khan_Resume.pdf" class="btn btn-outline" data-magnetic download>
+            <span class="btn-text">Download Resume</span>
+          </a>
+        </div>
+        <div class="hero-note-wrap" data-fade-up data-delay="500">
+          <span class="pulse-dot"></span>
+          <p class="hero-note mono">currently @ Makebell AI &bull; open to AI/ML + fullstack roles</p>
+        </div>
+      </div>
+      <div class="hero-right" data-fade-up data-delay="200">
+        <div class="hero-visual">
+          <canvas id="networkCanvas"></canvas>
+          <div class="hero-orb"></div>
+        </div>
+        <div class="hero-stat-cards">
+          <div class="stat-card" data-tilt>
+            <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+            <span class="stat-num" data-count="97" data-suffix="%">0</span>
+            <span class="stat-label">Recognition<br>Accuracy</span>
+          </div>
+          <div class="stat-card" data-tilt>
+            <div class="stat-icon stat-icon--gold"><i class="fas fa-rocket"></i></div>
+            <span class="stat-num" data-count="8" data-suffix="+">0</span>
+            <span class="stat-label">Projects<br>Shipped</span>
+          </div>
+          <div class="stat-card" data-tilt>
+            <div class="stat-icon stat-icon--brick"><i class="fas fa-flask"></i></div>
+            <span class="stat-num" data-count="1" data-suffix="">0</span>
+            <span class="stat-label">Active<br>Research</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" data-fade-up data-delay="800">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span class="mono">scroll down</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="section-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="var(--surface)" opacity=".3"/>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="var(--surface)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-label mono" data-fade-up>
+        <span class="section-label-line"></span>
+        About Me
+      </div>
+      <div class="about-grid">
+        <div class="about-left" data-fade-right>
+          <h2 class="section-title">Research meets<br>engineering &mdash;<br><span class="accent">that's my craft.</span></h2>
+          <div class="about-quote">
+            <span class="quote-mark">"</span>
+          </div>
+        </div>
+        <div class="about-right" data-fade-left>
+          <p>I'm a Computer Science undergraduate at the <strong>University of Dhaka</strong> focused on building AI-first products and research-driven software systems.</p>
+          <p>Recent work includes benchmarking <strong>10 neural network architectures</strong> at 97% accuracy, shipping legal AI tooling at Makebell, and building real-time collaborative coding platforms.</p>
+          <div class="about-highlights">
+            <div class="highlight-item" data-tilt>
+              <div class="highlight-icon"><i class="fas fa-brain"></i></div>
+              <div>
+                <strong>AI / Deep Learning</strong>
+                <span>Neural networks, image recognition, RAG systems</span>
+              </div>
+              <div class="highlight-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="highlight-item" data-tilt>
+              <div class="highlight-icon highlight-icon--gold"><i class="fas fa-code"></i></div>
+              <div>
+                <strong>Fullstack Engineering</strong>
+                <span>Next.js, FastAPI, Spring Boot, Flutter</span>
+              </div>
+              <div class="highlight-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="highlight-item" data-tilt>
+              <div class="highlight-icon highlight-icon--brick"><i class="fas fa-flask"></i></div>
+              <div>
+                <strong>Research</strong>
+                <span>Neuroplasticity-inspired training, PCA optimization</span>
+              </div>
+              <div class="highlight-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-label mono" data-fade-up>
+        <span class="section-label-line"></span>
+        Experience
+      </div>
+      <h2 class="section-title" data-fade-up>Where I've<br><span class="accent">worked.</span></h2>
+
+      <div class="timeline">
+        <!-- Makebell AI -->
+        <div class="timeline-item" data-fade-up>
+          <div class="timeline-marker">
+            <div class="timeline-dot">
+              <div class="timeline-pulse"></div>
+            </div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content" data-tilt>
+            <div class="timeline-header">
+              <div>
+                <h3>Fullstack AI Engineer</h3>
+                <p class="company">Makebell AI</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="badge badge--active"><span class="badge-dot"></span>Active</span>
+                <span class="mono date">Jun 2025 &mdash; Present</span>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Built a <strong>Notion-style rich editor</strong> for legal templates and a real-time clause sidebar using Next.js and FastAPI.</li>
+                <li>Delivered a <strong>tabular review interface</strong> and internal chat app used in daily legal workflows.</li>
+                <li>Shipped continuous collaborative editing for multi-user legal document authoring.</li>
+                <li>Designed agentic workflows with <strong>Claude Agent SDK</strong> and Human-in-the-Loop controls for supervised automation.</li>
+                <li>Productionized services with <strong>Docker</strong>, <strong>Docling</strong>, and <strong>Celery</strong> for extraction and asynchronous processing.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span>Next.js</span><span>FastAPI</span><span>Claude Agent SDK</span><span>HITL</span><span>Docker</span><span>Celery</span><span>Docling</span><span>Collaborative Editor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SuperAnnotate -->
+        <div class="timeline-item" data-fade-up>
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content" data-tilt>
+            <div class="timeline-header">
+              <div>
+                <h3>Advanced Coder & SQL Specialist</h3>
+                <p class="company">SuperAnnotate</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="badge">Remote</span>
+                <span class="mono date">Oct 2023 &mdash; May 2025</span>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Engineered <strong>30+ complex Snowflake SQL queries</strong> utilizing CTEs and window functions to transform business logic requirements into actionable data pipelines for AI training.</li>
+                <li>Created <strong>300+ coding problems</strong> and solutions in Python, LangChain, Java, SQL, and C/C++ for AI model training datasets.</li>
+                <li>Served as a <strong>quality reviewer</strong> ensuring accuracy and consistency of data from other contributors.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span>Snowflake SQL</span><span>Python</span><span>LangChain</span><span>Java</span><span>C/C++</span><span>Data Quality</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section class="section research" id="research">
+    <div class="section-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="var(--bg)" opacity=".4"/>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="var(--bg)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-label mono" data-fade-up>
+        <span class="section-label-line"></span>
+        Research Experience
+      </div>
+      <h2 class="section-title" data-fade-up>Neural network<br><span class="accent">research.</span></h2>
+
+      <div class="research-list">
+        <div class="research-item" data-fade-up data-tilt>
+          <div class="research-accent-bar"></div>
+          <div class="research-content">
+            <div class="research-meta">
+              <span class="badge badge--active"><span class="badge-dot"></span>Ongoing</span>
+              <span class="mono" style="margin-left: 12px;">May 2024 &mdash; Present</span>
+            </div>
+            <h3>Neural Network Research for Image Recognition</h3>
+            <p class="research-role">Independent Researcher under Prof. Dr. A. B. M. Alim Al Islam &bull; Dhaka, Bangladesh</p>
+            <ul class="research-details">
+              <li>Benchmarked <strong>10 NN architectures</strong> (CNN, RNN, MNN, InceptionNet, MobileNet, VGG16, ResNet152, DenseNet, EfficientNet, AlexNet), achieving a 27% improvement in inference speed while maintaining <strong>97% accuracy</strong>.</li>
+              <li>Developed a <strong>neuroplasticity-inspired training method</strong> that reduced overfitting by 32% and improved model generalization on unseen datasets.</li>
+              <li>Created an optimized image recognition pipeline that reduced preprocessing time by 40% through <strong>parallel computing techniques</strong>.</li>
+              <li>Applied PCA-based dimensionality reduction that decreased model size by 35% with minimal accuracy impact (&lt;2% drop).</li>
+            </ul>
+            <div class="research-tags"><span>CNN</span><span>ResNet152</span><span>DenseNet</span><span>PCA</span><span>Neuroplasticity</span></div>
+          </div>
+          <div class="research-highlight">
+            <span class="big-num" data-count="97" data-suffix="%">0</span>
+            <span class="big-label">accuracy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-label mono" data-fade-up>
+        <span class="section-label-line"></span>
+        Projects
+      </div>
+      <h2 class="section-title" data-fade-up>Things I've<br><span class="accent">built.</span></h2>
+
+      <!-- Project Filter Tabs -->
+      <div class="project-filters" data-fade-up>
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+        <button class="filter-btn" data-filter="systems">Systems</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- 01 - Inteligente -->
+        <div class="project-card" data-fade-up data-category="ai fullstack">
+          <div class="project-card-inner" data-tilt>
+            <div class="project-number mono">01</div>
+            <div class="project-top-row">
+              <div class="project-icon-wrap project-icon-wrap--purple"><i class="fas fa-robot"></i></div>
+              <a href="https://github.com/TanzilaKhan1/Chatbot" target="_blank" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <h3>Inteligente &mdash; AI Study Chatbot</h3>
+            <p>Built a full-stack RAG web app where users upload and organize PDFs by folders, then query documents with LangChain using OpenAI and Gemini.</p>
+            <div class="project-tech">
+              <span>Next.js</span><span>FastAPI</span><span>LangChain</span><span>Qdrant</span><span>Supabase</span><span>Docling</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 - CodeCollab -->
+        <div class="project-card" data-fade-up data-category="fullstack systems">
+          <div class="project-card-inner" data-tilt>
+            <div class="project-number mono">02</div>
+            <div class="project-top-row">
+              <div class="project-icon-wrap project-icon-wrap--gold"><i class="fas fa-users"></i></div>
+              <a href="https://github.com/CREVIOS/cody" target="_blank" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <h3>CodeCollab Platform</h3>
+            <p>Real-time collaborative coding platform with CRDT conflict resolution, Docker sandboxed execution, RBAC (Owner/Editor/Viewer), and collaborative Monaco editing.</p>
+            <div class="project-tech">
+              <span>Next.js</span><span>TypeScript</span><span>FastAPI</span><span>CockroachDB</span><span>Docker</span><span>WebSocket</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 - BitTorrent -->
+        <div class="project-card" data-fade-up data-category="systems">
+          <div class="project-card-inner" data-tilt>
+            <div class="project-number mono">03</div>
+            <div class="project-top-row">
+              <div class="project-icon-wrap project-icon-wrap--brick"><i class="fas fa-network-wired"></i></div>
+              <a href="https://github.com/TanzilaKhan1/Bit-Torrent" target="_blank" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <h3>BitTorrent Client with Network Viz</h3>
+            <p>Standards-compliant BitTorrent client with BEP-0003/5/15 support, Kademlia DHT trackerless discovery, rarest-first piece selection, and live network topology visualization.</p>
+            <div class="project-tech">
+              <span>Python</span><span>asyncio</span><span>PyQt6</span><span>PyGame</span><span>DHT</span><span>REST API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 - Uthsorgo -->
+        <div class="project-card" data-fade-up data-category="fullstack ai">
+          <div class="project-card-inner" data-tilt>
+            <div class="project-number mono">04</div>
+            <div class="project-top-row">
+              <div class="project-icon-wrap project-icon-wrap--pink"><i class="fas fa-heartbeat"></i></div>
+              <a href="https://github.com/TanzilaKhan1/Uthsorgo" target="_blank" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <h3>Uthsorgo &mdash; Healthcare Platform</h3>
+            <p>Telemedicine platform with an AI medical assistant, JWT auth via Spring Security, BMDC provider verification, Agora RTC video consultations, and Flutter mobile support.</p>
+            <div class="project-tech">
+              <span>Spring Boot</span><span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span><span>Flutter</span><span>Kubernetes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 - KitchenMate -->
+        <div class="project-card" data-fade-up data-category="fullstack">
+          <div class="project-card-inner" data-tilt>
+            <div class="project-number mono">05</div>
+            <div class="project-top-row">
+              <div class="project-icon-wrap project-icon-wrap--gold"><i class="fas fa-utensils"></i></div>
+              <a href="https://github.com/ninadgns/Android-Project-Pink-Flag" target="_blank" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <h3>KitchenMate &mdash; Cooking Assistant</h3>
+            <p>Cross-platform mobile app with personalized recipe recommendations, grocery management, offline access, and multi-timer system.</p>
+            <div class="project-tech">
+              <span>Flutter</span><span>Dart</span><span>Supabase</span><span>Firebase</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 - NutriCulinary -->
+        <div class="project-card" data-fade-up data-category="fullstack">
+          <div class="project-card-inner" data-tilt>
+            <div class="project-number mono">06</div>
+            <div class="project-top-row">
+              <div class="project-icon-wrap"><i class="fas fa-leaf"></i></div>
+              <a href="https://github.com/ninadgns/meal-planner" target="_blank" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <h3>NutriCulinary System</h3>
+            <p>Web app for personalized recipe recommendations based on dietary goals, with advanced PostgreSQL querying and detailed macro-level nutritional tracking.</p>
+            <div class="project-tech">
+              <span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07 - BookStay -->
+        <div class="project-card" data-fade-up data-category="fullstack">
+          <div class="project-card-inner" data-tilt>
+            <div class="project-number mono">07</div>
+            <div class="project-top-row">
+              <div class="project-icon-wrap project-icon-wrap--brick"><i class="fas fa-hotel"></i></div>
+              <a href="https://github.com/ninadgns/OOP-Project" target="_blank" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <h3>BookStay &mdash; Booking Platform</h3>
+            <p>Booking platform with real-time messaging, secure payments, dynamic pricing, and recommendation engine (+22% conversions).</p>
+            <div class="project-tech">
+              <span>Java</span><span>SQL</span><span>Supabase</span><span>JavaFX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 08 - Minesweeper -->
+        <div class="project-card" data-fade-up data-category="systems">
+          <div class="project-card-inner" data-tilt>
+            <div class="project-number mono">08</div>
+            <div class="project-top-row">
+              <div class="project-icon-wrap project-icon-wrap--purple"><i class="fas fa-gamepad"></i></div>
+              <a href="https://github.com/TanzilaKhan1/Project_minesweeper_with_treasure_hunt" target="_blank" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <h3>Minesweeper with Treasure Hunt</h3>
+            <p>Gamified Minesweeper with 5 difficulty levels, story-driven adventure mode, and adaptive difficulty system.</p>
+            <div class="project-tech">
+              <span>C++</span><span>Qt</span><span>OOP</span><span>Game Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section skills" id="skills">
+    <div class="section-divider section-divider--flip">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="var(--surface)" opacity=".3"/>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="var(--surface)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-label mono" data-fade-up>
+        <span class="section-label-line"></span>
+        Technical Skills
+      </div>
+      <h2 class="section-title" data-fade-up>Tools &<br><span class="accent">technologies.</span></h2>
+
+      <div class="skills-grid">
+        <div class="skill-category" data-fade-up data-tilt>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+            <h3>Programming Languages</h3>
+          </div>
+          <div class="skill-pills">
+            <span>Python</span><span>Java</span><span>Rust</span><span>Dart</span><span>C++</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-fade-up data-tilt>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon skill-cat-icon--brick"><i class="fas fa-brain"></i></div>
+            <h3>AI / ML Frameworks</h3>
+          </div>
+          <div class="skill-pills">
+            <span>PyTorch</span><span>TensorFlow / Keras</span><span>JAX</span><span>Hugging Face Transformers</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-fade-up data-tilt>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon skill-cat-icon--gold"><i class="fas fa-laptop-code"></i></div>
+            <h3>Development</h3>
+          </div>
+          <div class="skill-pills">
+            <span>Node.js</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Flutter</span><span>Next.js</span><span>REST API Design</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-fade-up data-tilt>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon skill-cat-icon--purple"><i class="fas fa-database"></i></div>
+            <h3>Databases & Cloud</h3>
+          </div>
+          <div class="skill-pills">
+            <span>MySQL</span><span>PostgreSQL</span><span>Oracle DB</span><span>Firebase</span><span>Supabase</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-fade-up data-tilt>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon skill-cat-icon--pink"><i class="fas fa-wand-magic-sparkles"></i></div>
+            <h3>Specialized Skills</h3>
+          </div>
+          <div class="skill-pills">
+            <span>Retrieval-Augmented Generation (RAG)</span><span>Model Optimization</span><span>Transfer Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="section achievements" id="achievements">
+    <div class="container">
+      <div class="section-label mono" data-fade-up>
+        <span class="section-label-line"></span>
+        Achievements
+      </div>
+      <h2 class="section-title" data-fade-up>Awards &<br><span class="accent">competitions.</span></h2>
+
+      <div class="achievements-grid">
+        <div class="achievement-card" data-fade-up data-tilt>
+          <div class="achievement-rank">
+            <span class="rank-number">1st</span>
+          </div>
+          <div class="achievement-content">
+            <div class="achievement-place">Champion</div>
+            <h3>DL Sprint by CUET</h3>
+            <p>Won 1st place for Bengali Regional ASR (Automatic Speech Recognition).</p>
+          </div>
+          <div class="achievement-icon achievement-icon--gold"><i class="fas fa-medal"></i></div>
+        </div>
+
+        <div class="achievement-card" data-fade-up data-tilt>
+          <div class="achievement-rank">
+            <span class="rank-number">2nd</span>
+          </div>
+          <div class="achievement-content">
+            <div class="achievement-place">1st Runner Up</div>
+            <h3>National Techtron Research Poster Presentation 2025</h3>
+            <p>University of Asia Pacific &mdash; Presented novel findings on CNN optimization techniques.</p>
+          </div>
+          <div class="achievement-icon achievement-icon--green"><i class="fas fa-trophy"></i></div>
+        </div>
+
+        <div class="achievement-card" data-fade-up data-tilt>
+          <div class="achievement-rank">
+            <span class="rank-number">#1</span>
+          </div>
+          <div class="achievement-content">
+            <div class="achievement-place">Batch Topper</div>
+            <h3>DU CTF 2023</h3>
+            <p>Highest points in cybersecurity among 120+ participants.</p>
+          </div>
+          <div class="achievement-icon achievement-icon--brick"><i class="fas fa-shield-halved"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section education" id="education">
+    <div class="section-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="var(--bg)" opacity=".4"/>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="var(--bg)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-label mono" data-fade-up>
+        <span class="section-label-line"></span>
+        Education
+      </div>
+      <h2 class="section-title" data-fade-up>Academic<br><span class="accent">background.</span></h2>
+
+      <div class="edu-card" data-fade-up data-tilt>
+        <div class="edu-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="edu-info">
+          <h3>University of Dhaka</h3>
+          <p class="edu-degree">B.Sc. in Computer Science & Engineering</p>
+          <div class="edu-details">
+            <span class="mono">2023 &mdash; 2026</span>
+            <span class="edu-divider">&bull;</span>
+            <span>Dhaka, Bangladesh</span>
+            <span class="edu-divider">&bull;</span>
+            <span class="edu-gpa">GPA: 3.69 / 4.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-inner" data-fade-up>
+        <div class="contact-pattern"></div>
+        <div class="contact-glow"></div>
+        <div class="section-label mono">
+          <span class="section-label-line" style="background: rgba(255,255,255,0.2);"></span>
+          Get In Touch
+        </div>
+        <h2 class="section-title contact-title">Let's work<br><span class="accent">together.</span></h2>
+        <p class="contact-desc">Open to AI/ML engineering and fullstack roles. You can download my resume directly below.</p>
+
+        <div class="contact-links">
+          <a href="Tanzila_Khan_Resume.pdf" download class="contact-card" data-magnetic>
+            <div class="contact-card-icon"><i class="fas fa-file-arrow-down"></i></div>
+            <div>
+              <span class="contact-card-label mono">Resume</span>
+              <span class="contact-card-value">Tanzila_Khan_Resume.pdf</span>
+            </div>
+          </a>
+          <a href="mailto:tanzila011001@gmail.com" class="contact-card" data-magnetic>
+            <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-card-label mono">Email</span>
+              <span class="contact-card-value">tanzila011001@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://github.com/TanzilaKhan1" target="_blank" class="contact-card" data-magnetic>
+            <div class="contact-card-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <span class="contact-card-label mono">GitHub</span>
+              <span class="contact-card-value">TanzilaKhan1</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/tanzila-khan-645193313/" target="_blank" class="contact-card" data-magnetic>
+            <div class="contact-card-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <span class="contact-card-label mono">LinkedIn</span>
+              <span class="contact-card-value">Tanzila Khan</span>
+            </div>
+          </a>
+          <a href="https://tanzilakhan1.github.io/TanzilaKhan1/" target="_blank" class="contact-card" data-magnetic>
+            <div class="contact-card-icon"><i class="fas fa-globe"></i></div>
+            <div>
+              <span class="contact-card-label mono">Portfolio</span>
+              <span class="contact-card-value">tanzilakhan1.github.io</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="mono">&copy; 2026 Tanzila Khan</span>
+        <div class="footer-socials">
+          <a href="https://github.com/TanzilaKhan1" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/tanzila-khan-645193313/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:tanzila011001@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <span class="mono">Built with precision.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg class="progress-ring" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="20"/>
+      <circle class="progress-ring-fill" cx="24" cy="24" r="20" id="progressRing"/>
+    </svg>
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
